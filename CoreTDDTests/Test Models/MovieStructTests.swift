@@ -25,6 +25,13 @@ class MovieStructTests: XCTestCase {
         XCTAssertNotNil(testMovie)
         XCTAssertEqual(testMovie.title, "Generic Blockbuster")
     }
+    
+    func testInit_MovieWithTitleAndReleaseDate() {
+        let testMovie = Movie(title: "Captin America", releaseDate: "2011")
+        
+        XCTAssertNotNil(testMovie)
+        XCTAssertEqual(testMovie.releaseDate, "2011")
+    }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.

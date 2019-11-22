@@ -81,10 +81,10 @@
 		44EC861E23880D1A00E1F825 /* CoreTDD */ = {
 			isa = PBXGroup;
 			children = (
+				44EC86462388194F00E1F825 /* Controllers */,
+				44EC86452388194700E1F825 /* Models */,
 				44EC861F23880D1A00E1F825 /* AppDelegate.swift */,
 				44EC862123880D1A00E1F825 /* SceneDelegate.swift */,
-				44EC862323880D1A00E1F825 /* ViewController.swift */,
-				44EC8643238815AF00E1F825 /* Movie.swift */,
 				44EC862523880D1A00E1F825 /* Main.storyboard */,
 				44EC862823880D1C00E1F825 /* Assets.xcassets */,
 				44EC862A23880D1C00E1F825 /* LaunchScreen.storyboard */,
@@ -96,10 +96,42 @@
 		44EC863823880D8600E1F825 /* CoreTDDTests */ = {
 			isa = PBXGroup;
 			children = (
+				44EC86482388196F00E1F825 /* Test Controllers */,
+				44EC86472388196300E1F825 /* Test Models */,
 				44EC863B23880D8600E1F825 /* Info.plist */,
-				44EC86412388139B00E1F825 /* MovieStructTests.swift */,
 			);
 			path = CoreTDDTests;
+			sourceTree = "<group>";
+		};
+		44EC86452388194700E1F825 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				44EC8643238815AF00E1F825 /* Movie.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		44EC86462388194F00E1F825 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				44EC862323880D1A00E1F825 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		44EC86472388196300E1F825 /* Test Models */ = {
+			isa = PBXGroup;
+			children = (
+				44EC86412388139B00E1F825 /* MovieStructTests.swift */,
+			);
+			path = "Test Models";
+			sourceTree = "<group>";
+		};
+		44EC86482388196F00E1F825 /* Test Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Test Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
