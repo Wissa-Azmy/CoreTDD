@@ -13,7 +13,7 @@
 		44EC862723880D1A00E1F825 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44EC862523880D1A00E1F825 /* Main.storyboard */; };
 		44EC862923880D1C00E1F825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44EC862823880D1C00E1F825 /* Assets.xcassets */; };
 		44EC862C23880D1C00E1F825 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44EC862A23880D1C00E1F825 /* LaunchScreen.storyboard */; };
-		44EC863A23880D8600E1F825 /* CoreTDDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC863923880D8600E1F825 /* CoreTDDTests.swift */; };
+		44EC86422388139B00E1F825 /* MovieStructTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC86412388139B00E1F825 /* MovieStructTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +36,8 @@
 		44EC862B23880D1C00E1F825 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44EC862D23880D1C00E1F825 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44EC863723880D8600E1F825 /* CoreTDDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTDDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		44EC863923880D8600E1F825 /* CoreTDDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTDDTests.swift; sourceTree = "<group>"; };
 		44EC863B23880D8600E1F825 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44EC86412388139B00E1F825 /* MovieStructTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieStructTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +93,8 @@
 		44EC863823880D8600E1F825 /* CoreTDDTests */ = {
 			isa = PBXGroup;
 			children = (
-				44EC863923880D8600E1F825 /* CoreTDDTests.swift */,
 				44EC863B23880D8600E1F825 /* Info.plist */,
+				44EC86412388139B00E1F825 /* MovieStructTests.swift */,
 			);
 			path = CoreTDDTests;
 			sourceTree = "<group>";
@@ -152,6 +152,7 @@
 					};
 					44EC863623880D8600E1F825 = {
 						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1110;
 						TestTargetID = 44EC861B23880D1A00E1F825;
 					};
 				};
@@ -210,7 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44EC863A23880D8600E1F825 /* CoreTDDTests.swift in Sources */,
+				44EC86422388139B00E1F825 /* MovieStructTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +397,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CoreTDDTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -405,6 +407,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wissa.CoreTDDTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoreTDD.app/CoreTDD";
@@ -415,6 +418,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CoreTDDTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
