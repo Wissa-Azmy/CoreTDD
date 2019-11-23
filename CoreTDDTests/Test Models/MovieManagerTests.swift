@@ -22,6 +22,7 @@ class MovieManagerTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    // MARK: - Initial Values
     func testInit_MoviesToSee_ReturnZero() {
         XCTAssertEqual(sut.moviesToSeeCount, 0)
     }
@@ -46,6 +47,29 @@ class MovieManagerTests: XCTestCase {
         XCTAssertEqual(movieQueried.title, testMovie.title)
     }
     
-   
+    // MARK: - Checking Off Movies
+    func testCheckOffMovie_UpdateMovieManagerCounts() {
+        sut.add(movie: Movie(title: "Avengers: End Game"))
+        sut.checkOffMovie(atIndex: 0)
+        
+        XCTAssertEqual(sut.moviesToSeeCount, 0)
+        XCTAssertEqual(sut.moviesSeenCount, 1)
+    }
+    
+    func testCheckOffMovie_RemoveMovieFromArray() {
+        sut.add(movie: Movie(title: "Iron Man 1"))
+        sut.add(movie: Movie(title: "Iron Man 2"))
+        sut.checkOffMovie(atIndex: 0)
+        
+        XCTAssertEqual(sut.movie(atIndex: 0).title, "Iron Man 2")
+    }
+    
+    func testCheckOffMovie_ReturnsMovieAtIndex() {
+        sut.add(movie: Movie(title: "Black Panther"))
+        sut.checkOffMovie(atIndex: 0)
+        
+        let queriedMovie = sut.checkedOffMovie(atIndex: 0)
+        XCTAssertEqual(queriedMovie.title, "Black Panther")
+    }
 
 }
