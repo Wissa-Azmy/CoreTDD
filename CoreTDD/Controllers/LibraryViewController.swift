@@ -8,13 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LibraryViewController: UIViewController {
+    
+    @IBOutlet weak var libraryTableView: UITableView!
+    @IBOutlet weak var dataSource: MoviesLibraryDataService!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        libraryTableView.dataSource = dataSource
+        libraryTableView.delegate = dataSource
     }
-
 
 }
 
