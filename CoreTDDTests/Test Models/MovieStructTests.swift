@@ -32,12 +32,26 @@ class MovieStructTests: XCTestCase {
         XCTAssertNotNil(testMovie)
         XCTAssertEqual(testMovie.releaseDate, "2011")
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testEquatable_EqualMoviesTitles() {
+        let movie1 = Movie(title: "Wissa")
+        let movie2 = Movie(title: "Wissa")
+        
+        XCTAssertEqual(movie1, movie2)
+    }
+    
+    func testEquatable_NotEqualMoviesTitles() {
+        let movie1 = Movie(title: "Wissa")
+        let movie2 = Movie(title: "Michael")
+        
+        XCTAssertNotEqual(movie1, movie2)
+    }
+    
+    func testEquatable_EqualReleaseDates() {
+        let movie1 = Movie(title: "Wissa", releaseDate: "2000")
+        let movie2 = Movie(title: "Wissa", releaseDate: "2019")
+        
+        XCTAssertNotEqual(movie1, movie2)
     }
 
 }
