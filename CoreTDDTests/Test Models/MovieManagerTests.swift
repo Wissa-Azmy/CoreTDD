@@ -12,6 +12,8 @@ import XCTest
 class MovieManagerTests: XCTestCase {
     
     var sut: MovieManager!
+    let movie1 = Movie(title: "Wissa")
+    let movie2 = Movie(title: "Michael")
     
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -70,6 +72,29 @@ class MovieManagerTests: XCTestCase {
         
         let queriedMovie = sut.checkedOffMovie(atIndex: 0)
         XCTAssertEqual(queriedMovie.title, "Black Panther")
+    }
+    
+    // MARK: - Clear & Reset
+    func testClearArray_ReturnsArrayCountOfZero() {
+        sut.add(movie: movie1)
+        sut.add(movie: movie2)
+        
+        sut.checkOffMovie(atIndex: 0)
+        
+        XCTAssertEqual(sut.moviesToSeeCount, 1)
+        XCTAssertEqual(sut.moviesSeenCount, 1)
+        
+        sut.clearMovies()
+        
+        XCTAssertEqual(sut.moviesSeenCount, 0)
+        XCTAssertEqual(sut.moviesToSeeCount, 0)
+    }
+    
+    func testDuplicateMovies_ShouldNotBeAddedToArray() {
+        sut.add(movie: movie1)
+        sut.add(movie: movie1)
+        
+        XCTAssertEqual(sut.moviesToSeeCount, 1)
     }
 
 }
