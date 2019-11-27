@@ -11,6 +11,7 @@ import XCTest
 @testable import CoreTDD
 class MoviesLibraryDataServiceTest: XCTestCase {
     var sut: MoviesLibraryDataService!
+    var libraryVC: LibraryViewController!
     var tableView: UITableView!
     
     let fairyTail = Movie(title: "Fairy Tail")
@@ -21,7 +22,15 @@ class MoviesLibraryDataServiceTest: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         sut = MoviesLibraryDataService()
         sut.movieManager = MovieManager()
-        tableView = UITableView()
+        libraryVC = UIStoryboard(
+            name: "Main",
+            bundle: nil
+        ).instantiateViewController(
+            withIdentifier: "LibraryViewController"
+        ) as? LibraryViewController
+        _ = libraryVC.view
+        
+        tableView = libraryVC.libraryTableView
         
         tableView.dataSource = sut
         tableView.delegate = sut
@@ -57,5 +66,37 @@ class MoviesLibraryDataServiceTest: XCTestCase {
         sut.movieManager?.checkOffMovie(atIndex: 0)
         XCTAssertEqual(tableView.numberOfRows(inSection: 1), 2)
     }
+    
+    // MARK: - Cells
+    func testCell_RowAtIndex_IsMovieCell() {
+        sut.movieManager?.add(movie: fairyTail)
+        tableView.reloadData()
+        
+        let queriedCell = tableView.cellForRow(at: IndexPath(row: 0, section: 0))
+        
+        XCTAssertTrue(queriedCell is MovieCell)
+    }
 
+    func testCell_ShouldDequeueCell() {
+        let tableViewMoc = TableViewMock()
+        tableViewMoc.dataSource = sut
+        tableViewMoc.register(MovieCell.self, forCellReuseIdentifier: "movieCellID")
+        sut.movieManager?.add(movie: fairyTail)
+        tableViewMoc.reloadData()
+        _ = tableViewMoc.cellForRow(at: IndexPath(row: 0, section: 0))
+        
+        XCTAssertTrue(tableViewMoc.cellDequeuedProperly)
+    }
+}
+
+extension MoviesLibraryDataServiceTest {
+    class TableViewMock: UITableView {
+        var cellDequeuedProperly = false
+        
+        override func dequeueReusableCell(withIdentifier identifier: String, for indexPath: IndexPath) -> UITableViewCell {
+            cellDequeuedProperly = true
+            
+            return super.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        }
+    }
 }

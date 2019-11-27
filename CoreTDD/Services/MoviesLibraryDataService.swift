@@ -37,7 +37,8 @@ class MoviesLibraryDataService: NSObject, UITableViewDataSource, UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCellID", for: indexPath)
+        return cell
     }
     
     

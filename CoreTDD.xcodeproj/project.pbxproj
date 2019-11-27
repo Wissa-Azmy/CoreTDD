@@ -10,6 +10,7 @@
 		44C5A3AC2389A1C400B1E17F /* LibraryViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C5A3AB2389A1C400B1E17F /* LibraryViewControllerTest.swift */; };
 		44C5A3AF2389E9C900B1E17F /* MoviesLibraryDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C5A3AE2389E9C900B1E17F /* MoviesLibraryDataService.swift */; };
 		44C5A3B2238B45A300B1E17F /* MoviesLibraryDataServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C5A3B1238B45A200B1E17F /* MoviesLibraryDataServiceTest.swift */; };
+		44C5A3D5238D661600B1E17F /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C5A3D4238D661600B1E17F /* MovieCell.swift */; };
 		44EC862023880D1A00E1F825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC861F23880D1A00E1F825 /* AppDelegate.swift */; };
 		44EC862223880D1A00E1F825 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC862123880D1A00E1F825 /* SceneDelegate.swift */; };
 		44EC862423880D1A00E1F825 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC862323880D1A00E1F825 /* LibraryViewController.swift */; };
@@ -36,6 +37,7 @@
 		44C5A3AB2389A1C400B1E17F /* LibraryViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewControllerTest.swift; sourceTree = "<group>"; };
 		44C5A3AE2389E9C900B1E17F /* MoviesLibraryDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesLibraryDataService.swift; sourceTree = "<group>"; };
 		44C5A3B1238B45A200B1E17F /* MoviesLibraryDataServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesLibraryDataServiceTest.swift; sourceTree = "<group>"; };
+		44C5A3D4238D661600B1E17F /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		44EC861C23880D1A00E1F825 /* CoreTDD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreTDD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44EC861F23880D1A00E1F825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44EC862123880D1A00E1F825 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 			path = "Test Services";
 			sourceTree = "<group>";
 		};
+		44C5A3D3238D65FA00B1E17F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				44C5A3D4238D661600B1E17F /* MovieCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		44EC861323880D1A00E1F825 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +125,7 @@
 		44EC861E23880D1A00E1F825 /* CoreTDD */ = {
 			isa = PBXGroup;
 			children = (
+				44C5A3D3238D65FA00B1E17F /* Views */,
 				44C5A3AD2389E99300B1E17F /* Services */,
 				44EC86462388194F00E1F825 /* Controllers */,
 				44EC86452388194700E1F825 /* Models */,
@@ -267,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44C5A3D5238D661600B1E17F /* MovieCell.swift in Sources */,
 				44EC862423880D1A00E1F825 /* LibraryViewController.swift in Sources */,
 				44EC862023880D1A00E1F825 /* AppDelegate.swift in Sources */,
 				44EC864C23881D7400E1F825 /* MovieManager.swift in Sources */,
