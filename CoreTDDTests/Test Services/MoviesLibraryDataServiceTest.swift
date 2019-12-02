@@ -13,6 +13,7 @@ class MoviesLibraryDataServiceTest: XCTestCase {
     var sut: MoviesLibraryDataService!
     var libraryVC: LibraryViewController!
     var tableView: UITableView!
+    var mockTable = TableViewMock()
     
     let fairyTail = Movie(title: "Fairy Tail")
     let thriller = Movie(title: "Thriller")
@@ -30,6 +31,7 @@ class MoviesLibraryDataServiceTest: XCTestCase {
         ) as? LibraryViewController
         _ = libraryVC.view
         
+        mockTable = TableViewMock.initMockTable(dataSource: sut)
         tableView = libraryVC.libraryTableView
         
         tableView.dataSource = sut
@@ -78,24 +80,26 @@ class MoviesLibraryDataServiceTest: XCTestCase {
     }
 
     func testCell_ShouldDequeueCell() {
-        let tableViewMoc = TableViewMock()
-        tableViewMoc.dataSource = sut
-        tableViewMoc.register(MovieCell.self, forCellReuseIdentifier: "movieCellID")
         sut.movieManager?.add(movie: fairyTail)
-        tableViewMoc.reloadData()
-        _ = tableViewMoc.cellForRow(at: IndexPath(row: 0, section: 0))
+        mockTable.reloadData()
+        _ = mockTable.cellForRow(at: IndexPath(row: 0, section: 0))
         
-        XCTAssertTrue(tableViewMoc.cellDequeuedProperly)
+        XCTAssertTrue(mockTable.cellDequeuedProperly)
     }
     
-    func testCell_SectionOneConfig_ShoultSetCellData() {
-        let mockTable = TableViewMock()
-        mockTable.dataSource = sut
-        mockTable.register(MovieCellMock.self, forCellReuseIdentifier: "movieCellID")
-        
+    func testCell_SectionOneConfig_ShouldSetCellData() {
         sut.movieManager?.add(movie: fairyTail)
         mockTable.reloadData()
         let cell = mockTable.cellForRow(at: IndexPath(row: 0, section: 0)) as! MovieCellMock
+        XCTAssertEqual(cell.movieData, fairyTail)
+    }
+    
+    func testCell_SectionTwoConfig_ShouldSetCellData() {
+        sut.movieManager?.add(movie: fairyTail)
+        sut.movieManager?.add(movie: darkComedy)
+        sut.movieManager?.checkOffMovie(atIndex: 0)
+        mockTable.reloadData()
+        let cell = mockTable.cellForRow(at: IndexPath(row: 0, section: 1)) as! MovieCellMock
         XCTAssertEqual(cell.movieData, fairyTail)
     }
 }
