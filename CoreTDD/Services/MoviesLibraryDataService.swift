@@ -54,7 +54,17 @@ class MoviesLibraryDataService: NSObject, UITableViewDataSource, UITableViewDele
         if librarySection == .moviesToSee {
             movieManager?.checkOffMovie(atIndex: indexPath.row)
             tableView.reloadData()
+        } else {
+            movieManager?.uncheckMovie(atIndex: indexPath.row)
+            tableView.reloadData()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let librarySection = LibrarySection(rawValue: section) else { fatalError() }
+        let title = librarySection == .moviesToSee ? "Movies To See" : "Movies Seen"
+        
+        return title
     }
     
 }

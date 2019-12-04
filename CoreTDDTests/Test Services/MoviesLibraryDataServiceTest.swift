@@ -114,5 +114,13 @@ class MoviesLibraryDataServiceTest: XCTestCase {
         XCTAssertEqual(tableView.numberOfRows(inSection: 0), 1)
         XCTAssertEqual(tableView.numberOfRows(inSection: 1), 1)
     }
+    
+    func testSectionTitles_ShouldHaveCorrectValues() {
+        let section1Title = tableView.dataSource?.tableView?(tableView, titleForHeaderInSection: 0)
+        let section2Title = tableView.dataSource?.tableView?(tableView, titleForHeaderInSection: 1)
+        
+        XCTAssertEqual(section1Title, "Movies To See")
+        XCTAssertEqual(section2Title, "Movies Seen")
+    }
 }
 

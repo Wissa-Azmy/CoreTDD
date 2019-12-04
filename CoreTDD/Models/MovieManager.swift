@@ -38,6 +38,12 @@ class MovieManager {
         return moviesSeen[index]
     }
     
+    func uncheckMovie(atIndex index: Int) {
+        guard index < moviesSeenCount else { return }
+        
+        moviesToSee.append(moviesSeen.remove(at: index))
+    }
+    
     func clearMovies() {
         moviesToSee.removeAll()
         moviesSeen.removeAll()

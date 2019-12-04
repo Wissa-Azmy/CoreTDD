@@ -42,7 +42,7 @@
 		44C5A3D4238D661600B1E17F /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		44C5A3D7238F2B3400B1E17F /* MocksExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocksExtension.swift; sourceTree = "<group>"; };
 		44C5A41F2396950600B1E17F /* MovieCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellTests.swift; sourceTree = "<group>"; };
-		44EC861C23880D1A00E1F825 /* CoreTDD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreTDD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		44EC861C23880D1A00E1F825 /* Movie Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44EC861F23880D1A00E1F825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44EC862123880D1A00E1F825 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		44EC862323880D1A00E1F825 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 		44EC861D23880D1A00E1F825 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				44EC861C23880D1A00E1F825 /* CoreTDD.app */,
+				44EC861C23880D1A00E1F825 /* Movie Time.app */,
 				44EC863723880D8600E1F825 /* CoreTDDTests.xctest */,
 			);
 			name = Products;
@@ -215,7 +215,7 @@
 			);
 			name = CoreTDD;
 			productName = CoreTDD;
-			productReference = 44EC861C23880D1A00E1F825 /* CoreTDD.app */;
+			productReference = 44EC861C23880D1A00E1F825 /* Movie Time.app */;
 			productType = "com.apple.product-type.application";
 		};
 		44EC863623880D8600E1F825 /* CoreTDDTests */ = {
@@ -478,7 +478,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wissa.CoreTDD;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Movie Time";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -495,7 +495,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wissa.CoreTDD;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Movie Time";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
